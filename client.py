@@ -10,7 +10,7 @@ prices = []
 for book in r.json():
 	# I am ignoring the fact that currencies maybe different but I do now know the conversion rates
 	prices.append(float(book["Price"]))
-	print(str(i) + " : " + book["Title"] + ", Book Rating :  " + str(book["Ratings"]) + ", Book Price : " + book["Price"] + book["Currency"])
+	print(str(i) + " : " + book["Title"].encode('utf8') + ", Average Rating :  " + str(book["Ratings"]) + ", Book Price : " + book["Price"].encode('utf8') + book["Currency"].encode('utf8'))
 	i = i + 1
 if (i == 0):
 	print("No results")
